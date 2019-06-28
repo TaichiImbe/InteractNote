@@ -1,0 +1,27 @@
+header{
+    position: fixed;
+}
+
+.canvas-wrapper{
+    position: relative;
+    /* width: 400px; */
+    /* height: 400px; */
+    margin: 0;
+    font-size: 0;
+    /* background-color: rgba(100, 0, 200, 1); */
+    /* background-color: rgba(255, 255, 100, 0.5); */
+    border: 1px solid #000000;
+}
+
+.canvas-wrapper canvas{
+    position: absolute;
+    /*キャンバス自体でサイズを指定すると予想しない結果になる
+    CSSで指定すると拡大されるみたい
+    */
+    /* width: 400px; */
+    /* height: 400px; */
+    top: 0px;
+    left: 0px;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* background-color: rgba(100, 100, 100, 0.5); */
+}
