@@ -28,12 +28,6 @@ window.addEventListener('load', () => {
         // 「context.beginPath()」と「context.closePath()」を都度draw関数内で実行するよりも、
         // 線の描き始め(dragStart関数)と線の描き終わり(dragEnd)で1回ずつ読んだほうがより綺麗に線画書ける
 
-        // 線の状態を定義する
-        // MDN CanvasRenderingContext2D: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
-        context.lineCap = 'round' //丸みを帯びた線にする
-        context.lineJoin = 'round' //丸みを帯びた線にする
-        context.lineWidth = 2; //線の太さ
-        context.strokeStyle = 'black'; //線の色
 
         // 書き始めは lastPosition.x, lastPosition.y の値はnullとなっているため、
         // クリックしたところを開始点としている。
