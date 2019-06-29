@@ -23,7 +23,7 @@ function onOver(e) {
 
 function onOut() {
     // console.log("mouseout");
-    text.textContent = ((e.clientX - canvas.offsetLeft)+','+(e.clientY - canvas.offsetTop));
+    // text.textContent = ((e.clientX - canvas.offsetLeft)+','+(e.clientY - canvas.offsetTop));
 }
 
 canvas.addEventListener('mousedown', onDown, false);

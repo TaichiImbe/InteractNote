@@ -61,10 +61,6 @@ window.addEventListener('load', () => {
         lastposition.y = y;
     }
 
-    //canvas上の絵を全部消す
-    function clear() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-    }
 
     //マウスのドラッグを開始したらisDragのフラグをtrueにする
     function dragStart(event) {
@@ -86,13 +82,14 @@ window.addEventListener('load', () => {
 
     //イベント処理を定義
     function initEventHandler() {
-        const clearButton = document.querySelector('#clear-button');
-        clearButton.addEventListener('click',clear);
 
         canvas.addEventListener('mousedown', dragStart);
         canvas.addEventListener('mouseup', dragEnd);
         canvas.addEventListener('mouseout', dragEnd);
         canvas.addEventListener('touchstart', dragStart);
+        canvas.addEventListener('touchmove', (event) => {
+            draw(event.layerX, event.layerY);
+        })
         canvas.addEventListener('touchend', dragEnd);
         canvas.addEventListener('mousemove', (event) => {
            
