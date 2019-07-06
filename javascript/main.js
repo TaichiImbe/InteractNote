@@ -1,7 +1,6 @@
 // ページ読み込みが完了したらコールバック
 // *コールバック: 第2引数の無形関数(=関数名省略)
 window.addEventListener('load', () => {
-    const canvas = document.querySelector('#draw-area');
     //contextを使ってcanvasに絵を書く
     const context = canvas.getContext('2d'); 
 
