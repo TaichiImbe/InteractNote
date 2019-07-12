@@ -9,6 +9,7 @@ window.addEventListener('load',() =>{
     canvas.setWidth(window.innerWidth);
     canvas.setHeight(window.innerHeight);
 
+    fabric.Object.prototype.transparentCorners = false;
     canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
     canvas.freeDrawingBrush.color = 'rgb(0,0,0)';
     canvas.freeDrawingBrush.width = 5;

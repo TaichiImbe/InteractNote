@@ -1,4 +1,4 @@
-var position = document.getElementById("draw-area");
+var position = document.getElementById("pdfCan");
 var text = document.getElementById("text");
 
 function onDown(e) {
