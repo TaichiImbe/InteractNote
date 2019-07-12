@@ -7,7 +7,8 @@ window.addEventListener('load', () => {
     var selectButton = $('select'),
         clearEI = $('clear-button'),
         eraserButton = $('eraser'),
-        drawButton = $('draw');
+        drawButton = $('draw'),
+        drawingColorEl = $('drawing-color');
 
     //canvas上の絵を全部消す
     clearEI.onclick = function(){canvas.clear()};
@@ -33,5 +34,9 @@ window.addEventListener('load', () => {
         // context.lineWidth = 2; //線の太さ
         // context.strokeStyle = "rgb(0,0,0)";
     };
+
+    drawingColorEl.onchange = function () {
+        canvas.freeDrawingBrush.color = this.value;
+    }
 
 });

@@ -12,17 +12,16 @@
   <!-- <div id="header"></div> -->
   <div id="header">
   <h1>ノート</h1>
-  <button>Emacs</button>
-  <button>Vim</button>
+  <input type="color" value="#000000" id="drawing-color">
+  <button id="prev">Prev</button>
+  <button id="next">Next</button>
   <button id="select">選択</button>
   <button id="draw">ペン</button>
   <button id="clear-button">全消し</button>
   <button id="eraser">消しゴム</button>
-  <a href="./filepage.html">ファイルの管理</a>
-  <textarea id="text">ログ</textarea>
+  <!-- <textarea id="text">ログ</textarea> -->
 </div>
   <div class="canvas-wrapper">
-      <!-- <canvas id="sq" width="300px" height="300px"></canvas> -->
       <!-- <canvas id="sq" width="500" height="500"></canvas> -->
       <canvas id="pdfCan"></canvas>
       <canvas id="draw-area"></canvas>
@@ -32,9 +31,10 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.0.0/fabric.min.js"></script>
   <script type="text/javascript" src="./javascript/practice.js"></script>
-  <script type="text/javascript" src="./javascript/mainFab.js"></script>
+  <script type="text/javascript" src="./javascript/mainfab.js"></script>
   <script type="text/javascript" src="./javascript/postViewFab.js"></script>
   <script type="text/javascript" src="./javascript/buttonActionFab.js"></script>
-  <script type="text/javascript" src="./javascript/pdfload.js"></script>
+  <!-- <script type="text/javascript" src="./javascript/pdfload.js"></script> -->
+  <script type="text/javascript" src="./javascript/pdf.js"></script>
 </body>
 </html>

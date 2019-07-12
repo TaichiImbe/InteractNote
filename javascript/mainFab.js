@@ -10,7 +10,7 @@ window.addEventListener('load',() =>{
     canvas.setHeight(window.innerHeight);
 
     canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
-    canvas.freeDrawingBrush.color = 'rgb(255,0,0)';
+    canvas.freeDrawingBrush.color = 'rgb(0,0,0)';
     canvas.freeDrawingBrush.width = 5;
     canvas.freeDrawingBrush.shadowBlur = 0;
     canvas.hoverCursor = 'move';
