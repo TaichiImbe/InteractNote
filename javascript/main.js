@@ -2,7 +2,7 @@
 // *コールバック: 第2引数の無形関数(=関数名省略)
 window.addEventListener('load', () => {
     //contextを使ってcanvasに絵を書く
-    // const canvas = document.getElementById('draw-area');
+    const canvas = document.getElementById('draw-area');
     const context = canvas.getContext('2d'); 
 
     const resize = () => {

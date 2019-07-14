@@ -10,10 +10,11 @@ window.addEventListener('load', () => {
     }
 
     function eraser() {
-        context.lineCap = 'round' //丸みを帯びた線にする
-        context.lineJoin = 'round' //丸みを帯びた線にする
-        context.lineWidth = 5; //線の太さ
-        context.strokeStyle = "rgb(255,255,255)";
+        context.globalCompositeOperation = 'destination-out';
+        // context.lineCap = 'round' //丸みを帯びた線にする
+        // context.lineJoin = 'round' //丸みを帯びた線にする
+        // context.lineWidth = 5; //線の太さ
+        // context.strokeStyle = "rgb(255,255,255)";
     }
 
     function drawset() {
