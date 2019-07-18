@@ -1,24 +1,28 @@
 window.addEventListener('load', () => {
-    var $ = function (id) {
+    //ドキュメント取得
+    var $f = function (id) {
         return document.getElementById(id);
     }
     // const canvas = new fabric.Canvas('draw-area');
 
-    var selectButton = $('select'),
-        clearEI = $('clear-button'),
-        eraserButton = $('eraser'),
-        drawButton = $('draw'),
+    var selectButton = $f('select'),
+        clearEI = $f('clear-button'),
+        eraserButton = $f('eraser'),
+        drawButton = $f('draw'),
         // drawingColorEl = $('drawing-color');
-        colorButton = $('colorButton');
+        colorButton = $f('colorButton'),
+        drawingLine = $f('Penwidth');
 
 
     //canvas上の絵を全部消す
     clearEI.onclick = function () { canvas.clear() };
 
+    //選択モード
     selectButton.onclick = function () {
         canvas.isDrawingMode = false;
     };
 
+    //消しゴムボタン
     eraserButton.onclick = function () {
         canvas.isDrawingMode = true;
         var context = canvas.contextTop;
@@ -33,6 +37,7 @@ window.addEventListener('load', () => {
         // context.strokeStyle = "rgb(255,255,255)";
     };
 
+    //ペンボタン
     drawButton.onclick = function () {
         canvas.isDrawingMode = true;
         canvas.contextTop.globalCompositeOperation = 'source-over';
@@ -44,9 +49,7 @@ window.addEventListener('load', () => {
         // context.strokeStyle = "rgb(0,0,0)";
     };
 
-    // drawingColorEl.onchange = function () {
-    //     canvas.freeDrawingBrush.color = this.value;
-    // }
+    //カラーパレット
     jQuery(function ($) {
         $("#picker").spectrum({
             allowEmpty: true,
@@ -96,5 +99,19 @@ window.addEventListener('load', () => {
 
         });
     });
+
+    //ペンの変更を表示・非表示
+    $(function(){
+        $('#Penwidth').toggle();
+        $('#penSize').click(function(){
+            $('#Penwidth').toggle();
+        });
+    });
+
+    drawingLine.onchange = function(){
+        canvas.freeDrawingBrush.width = parseInt(this.value,10) || 1;
+    }
+
+
 
 });
