@@ -21,8 +21,10 @@ window.addEventListener('load', () => {
 
     eraserButton.onclick = function () {
         canvas.isDrawingMode = true;
+        var context = canvas.contextTop;
         // canvas.contextTop.globalCompositeOperation = 'destination-out';
-        canvas.contextTop.globalCompositeOperation = 'xor';
+        // canvas.contextTop.globalCompositeOperation = 'xor';
+        context.globalCompositeOperation = 'source-out';
         // fabric.Objct.drawClipPathOnCache();
         // canvas.drawClipPathOnCache();
         // context.lineCap = 'round' //丸みを帯びた線にする
@@ -48,7 +50,7 @@ window.addEventListener('load', () => {
     jQuery(function ($) {
         $("#picker").spectrum({
             allowEmpty: true,
-            color: "#ECC",
+            color: "#000",
             showInput: true,
             containerClassName: "full-spectrum",
             showInitial: true,
