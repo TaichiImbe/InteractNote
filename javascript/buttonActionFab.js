@@ -15,7 +15,9 @@ window.addEventListener('load', () => {
 
 
     //canvas上の絵を全部消す
-    clearEI.onclick = function () { canvas.clear() };
+    clearEI.onclick = function () {
+        canvas.clear()
+    };
 
     //選択モード
     selectButton.onclick = function () {
@@ -111,7 +113,5 @@ window.addEventListener('load', () => {
     drawingLine.onchange = function(){
         canvas.freeDrawingBrush.width = parseInt(this.value,10) || 1;
     }
-
-
 
 });

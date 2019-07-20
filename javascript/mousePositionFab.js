@@ -8,4 +8,9 @@ $(document).ready(function(){
         const textfield = document.getElementById('text');
         textfield.textContent = mousePos.x + "," + mousePos.y;
     }});
+
+    canvas.on('object:selected', function (e) {
+        console.log(e.target.get);
+    });
+
 });
