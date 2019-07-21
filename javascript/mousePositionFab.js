@@ -19,7 +19,6 @@ $(document).ready(function(){
     canvas.on('object:moving', function (e) {
         // console.log(e.target.get);
         console.log('moving');
-        objectselect = true;
     });
 
     canvas.on('selection:created', function (e) {
