@@ -7,8 +7,8 @@ $(document).ready(function(){
         const posX = mousePos.x;
         const posY = mousePos.y;
 
-        const textfield = document.getElementById('text');
-        textfield.textContent = mousePos.x + "," + mousePos.y;
+        // const textfield = document.getElementById('text');
+        // textfield.textContent = mousePos.x + "," + mousePos.y;
     }});
 
     canvas.on('object:selected', function (e) {

@@ -6,6 +6,8 @@ const canvas = new fabric.Canvas('draw-area',{
 });
 window.addEventListener('load',() =>{
 
+    // const pd = canvas.getElementById('pdfCan');
+
     canvas.setWidth(window.innerWidth);
     canvas.setHeight(window.innerHeight);
 

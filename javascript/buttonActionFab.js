@@ -11,8 +11,29 @@ window.addEventListener('load', () => {
         drawButton = $f('draw'),
         // drawingColorEl = $('drawing-color');
         colorButton = $f('colorButton'),
-        drawingLine = $f('Penwidth');
+        drawingLine = $f('Penwidth'),
+        prevButton = $f('prev'),
+        nextButton = $f('next'),
+        textArea = $f('text');
 
+
+    prevButton.onclick = function () {
+        if (pageNum <= 1) {
+            return;
+        }
+        pageNum--;
+        pageRender(pageNum);
+        textArea.textContent = pageNum + "/" + pdf.numPages;
+    }
+
+    nextButton.onclick = function () {
+        if (pageNum >= pdf.numPages) {
+            return;
+        }
+        pageNum++;
+        pageRender(pageNum);
+        textArea.textContent = pageNum + "/" + pdf.numPages;
+    }
 
     //canvas上の絵を全部消す
     clearEI.onclick = function () {
@@ -103,15 +124,15 @@ window.addEventListener('load', () => {
     });
 
     //ペンの変更を表示・非表示
-    $(function(){
+    $(function () {
         $('#Penwidth').toggle();
-        $('#penSize').click(function(){
+        $('#penSize').click(function () {
             $('#Penwidth').toggle();
         });
     });
 
-    drawingLine.onchange = function(){
-        canvas.freeDrawingBrush.width = parseInt(this.value,10) || 1;
+    drawingLine.onchange = function () {
+        canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
     }
 
 });
