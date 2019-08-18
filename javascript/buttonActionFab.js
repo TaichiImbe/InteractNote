@@ -1,3 +1,4 @@
+var PageAnno = new Map();
 window.addEventListener('load', () => {
     //ドキュメント取得
     var $f = function (id) {
@@ -21,7 +22,11 @@ window.addEventListener('load', () => {
         if (pageNum <= 1) {
             return;
         }
+        PageAnno.set(pageNum,canvas.getObjects());
+        canvas.clear()
+        console.log(PageAnno);
         pageNum--;
+        AnnotationSet(pageNum);
         pageRender(pageNum);
         textArea.textContent = pageNum + "/" + pdf.numPages;
     }
@@ -30,9 +35,22 @@ window.addEventListener('load', () => {
         if (pageNum >= pdf.numPages) {
             return;
         }
+        PageAnno.set(pageNum,canvas.getObjects());
+        canvas.clear()
+        console.log(PageAnno);
         pageNum++;
+        AnnotationSet(pageNum);
         pageRender(pageNum);
         textArea.textContent = pageNum + "/" + pdf.numPages;
+    }
+
+    function AnnotationSet(pageNum){
+        const Anno = PageAnno.get(pageNum);
+        if(Anno != null){
+        Anno.forEach(element => {
+            canvas.add(element); 
+        });
+        }
     }
 
     //canvas上の絵を全部消す
@@ -46,19 +64,19 @@ window.addEventListener('load', () => {
     };
 
     //消しゴムボタン
-    eraserButton.onclick = function () {
-        canvas.isDrawingMode = true;
-        var context = canvas.contextTop;
-        // canvas.contextTop.globalCompositeOperation = 'destination-out';
-        // canvas.contextTop.globalCompositeOperation = 'xor';
-        context.globalCompositeOperation = 'source-out';
-        // fabric.Objct.drawClipPathOnCache();
-        // canvas.drawClipPathOnCache();
-        // context.lineCap = 'round' //丸みを帯びた線にする
-        // context.lineJoin = 'round' //丸みを帯びた線にする
-        // context.lineWidth = 5; //線の太さ
-        // context.strokeStyle = "rgb(255,255,255)";
-    };
+    // eraserButton.onclick = function () {
+    //     canvas.isDrawingMode = true;
+    //     var context = canvas.contextTop;
+    //     // canvas.contextTop.globalCompositeOperation = 'destination-out';
+    //     // canvas.contextTop.globalCompositeOperation = 'xor';
+    //     context.globalCompositeOperation = 'source-out';
+    //     // fabric.Objct.drawClipPathOnCache();
+    //     // canvas.drawClipPathOnCache();
+    //     // context.lineCap = 'round' //丸みを帯びた線にする
+    //     // context.lineJoin = 'round' //丸みを帯びた線にする
+    //     // context.lineWidth = 5; //線の太さ
+    //     // context.strokeStyle = "rgb(255,255,255)";
+    // };
 
     //ペンボタン
     drawButton.onclick = function () {
