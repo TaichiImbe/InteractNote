@@ -1,5 +1,5 @@
 
-const canvas = new fabric.Canvas('draw-area',{
+var canvas = new fabric.Canvas('draw-area',{
     isDrawingMode: true,
     selection: true,
     stateful: true
@@ -19,4 +19,17 @@ window.addEventListener('load',() =>{
     canvas.hoverCursor = 'move';
 
 
+});
+
+this.canvas.on('object:added',function(e){
+    let time = new Date();
+    let y = time.getFullYear();
+    let m = ("00"+ (time.getMonth()+1)).slice(-2);
+    let d = ("00"+ time.getDate()).slice(-2);
+    let hh = time.getHours();
+    let mm = time.getMinutes();
+    let ss = time.getSeconds();
+    // console.log(time);
+    console.log(y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss);
+    console.log(e);
 });

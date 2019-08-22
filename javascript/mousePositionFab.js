@@ -12,18 +12,20 @@ $(document).ready(function(){
     }});
 
     canvas.on('object:selected', function (e) {
-        console.log(e.target.get);
+        // console.log(e.target.get);
+        console.log(e.target);
         objectselect = true;
+        text = e.target;
     });
 
     canvas.on('object:moving', function (e) {
         // console.log(e.target.get);
-        console.log('moving');
+        // console.log('moving');
     });
 
     canvas.on('selection:created', function (e) {
         // console.log(e.target.get);
-        console.log('created');
+        // console.log('created');
         objectselect = true;
     });
 

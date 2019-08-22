@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
         if (pageNum <= 1) {
             return;
         }
-        PageAnno.set(pageNum,canvas.getObjects());
+        PageAnno.set(pageNum, canvas.getObjects());
         canvas.clear()
         console.log(PageAnno);
         pageNum--;
@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
         if (pageNum >= pdf.numPages) {
             return;
         }
-        PageAnno.set(pageNum,canvas.getObjects());
+        PageAnno.set(pageNum, canvas.getObjects());
         canvas.clear()
         console.log(PageAnno);
         pageNum++;
@@ -44,12 +44,12 @@ window.addEventListener('load', () => {
         textArea.textContent = pageNum + "/" + pdf.numPages;
     }
 
-    function AnnotationSet(pageNum){
+    function AnnotationSet(pageNum) {
         const Anno = PageAnno.get(pageNum);
-        if(Anno != null){
-        Anno.forEach(element => {
-            canvas.add(element); 
-        });
+        if (Anno != null) {
+            Anno.forEach(element => {
+                canvas.add(element);
+            });
         }
     }
 
