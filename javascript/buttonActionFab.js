@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
         }
         PageAnno.set(pageNum, Canvas.getObjects());
         Canvas.clear()
-        console.log(PageAnno);
+        logPrint(PageAnno);
         pageNum--;
         AnnotationSet(pageNum);
         pageRender(pageNum);
@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
         }
         PageAnno.set(pageNum, Canvas.getObjects());
         Canvas.clear()
-        console.log(PageAnno);
+        logPrint(PageAnno);
         pageNum++;
         AnnotationSet(pageNum);
         pageRender(pageNum);
@@ -118,8 +118,8 @@ window.addEventListener('load', () => {
             },
 
             hide: function (color) {
-                console.log(color);
                 Canvas.freeDrawingBrush.color = new fabric.Color(color.toHexString()).toRgb();
+                Pen.color = Canvas.freeDrawingBrush.color;
             },
 
             palette: [
@@ -152,6 +152,7 @@ window.addEventListener('load', () => {
 
     drawingLine.onchange = function () {
         Canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
+        Pen.brushWidth = Canvas.freeDrawingBrush.width;
     }
 
 });

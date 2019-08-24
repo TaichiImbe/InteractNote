@@ -3,10 +3,10 @@ document.onkeydown = function (e) {
         var activeObject = Canvas.getActiveObject();
         activeGroup = Canvas.getActiveObjects();
 
-        console.log(activeObject);
-        console.log(activeGroup);
+        logPrint(activeObject);
+        logPrint(activeGroup);
         if (activeGroup) {
-            console.log("Group");
+            logPrint("Group");
             // var objectInGroup = activeGroup.getObjects();
             Canvas.discardActiveObject();
             activeGroup.forEach(function (object) {
@@ -14,7 +14,7 @@ document.onkeydown = function (e) {
             });
 
         } else if (activeObject) {
-            console.log("Object");
+            logPrint("Object");
             var group = activeObject.getObjects();
             group.forEach(function (object) {
                 Canvas.remove(object)

@@ -12,8 +12,8 @@ $(document).ready(function(){
     }});
 
     Canvas.on('object:selected', function (e) {
-        // console.log(e.target.get);
-        console.log(e.target);
+        // logPrint(e.target.get);
+        logPrint(e.target);
         objectselect = true;
         text = e.target;
         var obje = e.target;
@@ -37,13 +37,13 @@ $(document).ready(function(){
     });
 
     Canvas.on('object:moving', function (e) {
-        // console.log(e.target.get);
-        // console.log('moving');
+        // logPrint(e.target.get);
+        // logPrint('moving');
     });
 
     Canvas.on('selection:created', function (e) {
-        // console.log(e.target.get);
-        // console.log('created');
+        // logPrint(e.target.get);
+        // logPrint('created');
         objectselect = true;
     });
 

@@ -21,7 +21,6 @@ window.addEventListener('load',() =>{
     Canvas.hoverCursor = 'move';
 
     Pen = new Penclie(Canvas.freeDrawingBrush.color, Canvas.freeDrawingBrush.width, Canvas.freeDrawingBrush.shadowBlur);
-
 });
 
 this.Canvas.on('object:added',function(e){
@@ -32,10 +31,9 @@ this.Canvas.on('object:added',function(e){
     let hh = time.getHours();
     let mm = time.getMinutes();
     let ss = time.getSeconds();
-    // console.log(time);
+    // logPrint(time);
     let realTime = y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss
-    // console.log(y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss);
-    // console.log(e);
+    // logPrint(y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss);
+    // logPrint(e);
     AnnoCollection.set(realTime,e.target);
-    console.log(AnnoCollection);
 });

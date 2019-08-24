@@ -2,27 +2,27 @@ var position = document.getElementById("pdfCan");
 var text = document.getElementById("text");
 
 function onDown(e) {
-    // console.log("down");
+    // logPrint("down");
     text.textContent = ((e.clientX - position.offsetLeft)+','+(e.clientY - position.offsetTop));
 }
 
 function onUp(e) {
-    // console.log("up");
+    // logPrint("up");
     text.textContent = ((e.clientX - position.offsetLeft)+','+(e.clientY - position.offsetTop));
 }
 
 function onClick(e) {
-    // console.log("click");
+    // logPrint("click");
     text.textContent = ((e.clientX - position.offsetLeft)+','+(e.clientY - position.offsetTop));
 }
 
 function onOver(e) {
-    // console.log("mouseover");
+    // logPrint("mouseover");
     text.textContent = ((e.clientX - position.offsetLeft)+','+(e.clientY - position.offsetTop));
 }
 
 function onOut() {
-    // console.log("mouseout");
+    // logPrint("mouseout");
     // text.textContent = ((e.clientX - position.offsetLeft)+','+(e.clientY - position.offsetTop));
 }
 
