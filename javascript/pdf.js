@@ -23,8 +23,8 @@ function pageRender(pageNum) {
   var viewport = page.getViewport(scale);
   var pdfCan = document.getElementById('pdfCan');
   var context = pdfCan.getContext('2d');
-  canvas.setHeight(viewport.height);
-  canvas.setWidth(viewport.width);
+  Canvas.setHeight(viewport.height);
+  Canvas.setWidth(viewport.width);
   pdfCan.height = viewport.height;
   pdfCan.width = viewport.width;
   var renderContext = {

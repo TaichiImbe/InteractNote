@@ -1,6 +1,6 @@
 setInterval(function () {
-    const object = canvas.size();
-    const objectArray = canvas.getObjects();
+    const object = Canvas.size();
+    const objectArray = Canvas.getObjects();
     // console.log(object);
     objectArray.forEach(element => {
         // console.log(element);

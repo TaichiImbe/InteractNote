@@ -1,29 +1,30 @@
-
-var canvas = new fabric.Canvas('draw-area',{
+let Pen;
+var Canvas = new fabric.Canvas('draw-area',{
     isDrawingMode: true,
     selection: true,
     stateful: true
 });
 
-var annoCollection = new Map();
+var AnnoCollection = new Map();
 window.addEventListener('load',() =>{
 
-    // const pd = canvas.getElementById('pdfCan');
+    // const pd = Canvas.getElementById('pdfCan');
 
-    canvas.setWidth(window.innerWidth);
-    canvas.setHeight(window.innerHeight);
+    Canvas.setWidth(window.innerWidth);
+    Canvas.setHeight(window.innerHeight);
 
     fabric.Object.prototype.transparentCorners = false;
-    canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
-    canvas.freeDrawingBrush.color = 'rgb(0,0,0)';
-    canvas.freeDrawingBrush.width = 5;
-    canvas.freeDrawingBrush.shadowBlur = 0;
-    canvas.hoverCursor = 'move';
+    Canvas.freeDrawingBrush = new fabric.PencilBrush(Canvas);
+    Canvas.freeDrawingBrush.color = 'rgb(0,0,0)';
+    Canvas.freeDrawingBrush.width = 5;
+    Canvas.freeDrawingBrush.shadowBlur = 0;
+    Canvas.hoverCursor = 'move';
 
+    Pen = new Penclie(Canvas.freeDrawingBrush.color, Canvas.freeDrawingBrush.width, Canvas.freeDrawingBrush.shadowBlur);
 
 });
 
-this.canvas.on('object:added',function(e){
+this.Canvas.on('object:added',function(e){
     let time = new Date();
     let y = time.getFullYear();
     let m = ("00"+ (time.getMonth()+1)).slice(-2);
@@ -35,6 +36,6 @@ this.canvas.on('object:added',function(e){
     let realTime = y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss
     // console.log(y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss);
     // console.log(e);
-    annoCollection.set(realTime,e.target);
-    console.log(annoCollection);
+    AnnoCollection.set(realTime,e.target);
+    console.log(AnnoCollection);
 });

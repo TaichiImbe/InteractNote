@@ -22,8 +22,8 @@ window.addEventListener('load', () => {
         if (pageNum <= 1) {
             return;
         }
-        PageAnno.set(pageNum, canvas.getObjects());
-        canvas.clear()
+        PageAnno.set(pageNum, Canvas.getObjects());
+        Canvas.clear()
         console.log(PageAnno);
         pageNum--;
         AnnotationSet(pageNum);
@@ -35,8 +35,8 @@ window.addEventListener('load', () => {
         if (pageNum >= pdf.numPages) {
             return;
         }
-        PageAnno.set(pageNum, canvas.getObjects());
-        canvas.clear()
+        PageAnno.set(pageNum, Canvas.getObjects());
+        Canvas.clear()
         console.log(PageAnno);
         pageNum++;
         AnnotationSet(pageNum);
@@ -48,25 +48,25 @@ window.addEventListener('load', () => {
         const Anno = PageAnno.get(pageNum);
         if (Anno != null) {
             Anno.forEach(element => {
-                canvas.add(element);
+                Canvas.add(element);
             });
         }
     }
 
     //canvas上の絵を全部消す
     clearEI.onclick = function () {
-        canvas.clear()
+        Canvas.clear()
     };
 
     //選択モード
     selectButton.onclick = function () {
-        canvas.isDrawingMode = false;
+        Canvas.isDrawingMode = false;
     };
 
     //消しゴムボタン
     eraserButton.onclick = function () {
-        canvas.isDrawingMode = true;
-        var context = canvas.contextTop;
+        Canvas.isDrawingMode = true;
+        var context = Canvas.contextTop;
         // canvas.contextTop.globalCompositeOperation = 'destination-out';
         // canvas.contextTop.globalCompositeOperation = 'xor';
         context.globalCompositeOperation = 'source-out';
@@ -81,8 +81,8 @@ window.addEventListener('load', () => {
 
     //ペンボタン
     drawButton.onclick = function () {
-        canvas.isDrawingMode = true;
-        canvas.contextTop.globalCompositeOperation = 'source-over';
+        Canvas.isDrawingMode = true;
+        Canvas.contextTop.globalCompositeOperation = 'source-over';
         // 線の状態を定義する
         // MDN CanvasRenderingContext2D: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
         // context.lineCap = 'round' //丸みを帯びた線にする
@@ -119,7 +119,7 @@ window.addEventListener('load', () => {
 
             hide: function (color) {
                 console.log(color);
-                canvas.freeDrawingBrush.color = new fabric.Color(color.toHexString()).toRgb();
+                Canvas.freeDrawingBrush.color = new fabric.Color(color.toHexString()).toRgb();
             },
 
             palette: [
@@ -151,7 +151,7 @@ window.addEventListener('load', () => {
     });
 
     drawingLine.onchange = function () {
-        canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
+        Canvas.freeDrawingBrush.width = parseInt(this.value, 10) || 1;
     }
 
 });

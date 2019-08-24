@@ -2,8 +2,8 @@ var objectselect = false;
 
 $(document).ready(function(){
     var mousePos = {x:0, y:0}
-    canvas.observe({'mouse:down': function(e){
-        mousePos = canvas.getPointer(e.e);
+    Canvas.observe({'mouse:down': function(e){
+        mousePos = Canvas.getPointer(e.e);
         const posX = mousePos.x;
         const posY = mousePos.y;
 
@@ -11,7 +11,7 @@ $(document).ready(function(){
         // textfield.textContent = mousePos.x + "," + mousePos.y;
     }});
 
-    canvas.on('object:selected', function (e) {
+    Canvas.on('object:selected', function (e) {
         // console.log(e.target.get);
         console.log(e.target);
         objectselect = true;
@@ -32,16 +32,16 @@ $(document).ready(function(){
             height: 5,
             width: 5
         });
-        canvas.add(ret);
-        canvas.add(end);
+        Canvas.add(ret);
+        Canvas.add(end);
     });
 
-    canvas.on('object:moving', function (e) {
+    Canvas.on('object:moving', function (e) {
         // console.log(e.target.get);
         // console.log('moving');
     });
 
-    canvas.on('selection:created', function (e) {
+    Canvas.on('selection:created', function (e) {
         // console.log(e.target.get);
         // console.log('created');
         objectselect = true;
