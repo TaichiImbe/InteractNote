@@ -64,19 +64,20 @@ window.addEventListener('load', () => {
     };
 
     //消しゴムボタン
-    // eraserButton.onclick = function () {
-    //     canvas.isDrawingMode = true;
-    //     var context = canvas.contextTop;
-    //     // canvas.contextTop.globalCompositeOperation = 'destination-out';
-    //     // canvas.contextTop.globalCompositeOperation = 'xor';
-    //     context.globalCompositeOperation = 'source-out';
-    //     // fabric.Objct.drawClipPathOnCache();
-    //     // canvas.drawClipPathOnCache();
-    //     // context.lineCap = 'round' //丸みを帯びた線にする
-    //     // context.lineJoin = 'round' //丸みを帯びた線にする
-    //     // context.lineWidth = 5; //線の太さ
-    //     // context.strokeStyle = "rgb(255,255,255)";
-    // };
+    eraserButton.onclick = function () {
+        canvas.isDrawingMode = true;
+        var context = canvas.contextTop;
+        // canvas.contextTop.globalCompositeOperation = 'destination-out';
+        // canvas.contextTop.globalCompositeOperation = 'xor';
+        context.globalCompositeOperation = 'source-out';
+        context.globalCompositeOperation = 'destination-out';
+        // fabric.Objct.drawClipPathOnCache();
+        // canvas.drawClipPathOnCache();
+        // context.lineCap = 'round' //丸みを帯びた線にする
+        // context.lineJoin = 'round' //丸みを帯びた線にする
+        // context.lineWidth = 5; //線の太さ
+        // context.strokeStyle = "rgb(255,255,255)";
+    };
 
     //ペンボタン
     drawButton.onclick = function () {

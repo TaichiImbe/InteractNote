@@ -4,6 +4,8 @@ var canvas = new fabric.Canvas('draw-area',{
     selection: true,
     stateful: true
 });
+
+var annoCollection = new Map();
 window.addEventListener('load',() =>{
 
     // const pd = canvas.getElementById('pdfCan');
@@ -30,6 +32,9 @@ this.canvas.on('object:added',function(e){
     let mm = time.getMinutes();
     let ss = time.getSeconds();
     // console.log(time);
-    console.log(y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss);
-    console.log(e);
+    let realTime = y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss
+    // console.log(y+"/"+m+"/"+d+" "+hh+":"+mm+":"+ss);
+    // console.log(e);
+    annoCollection.set(realTime,e.target);
+    console.log(annoCollection);
 });
