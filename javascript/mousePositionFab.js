@@ -32,6 +32,7 @@ $(document).ready(function(){
             height: 5,
             width: 5
         });
+        logPrint(obje.path);
         Canvas.add(ret);
         Canvas.add(end);
     });

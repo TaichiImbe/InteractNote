@@ -1,6 +1,6 @@
 let LogCheck = true;
 function logPrint(params) {
-    if (logcheck) {
+    if (LogCheck) {
         console.log(params);
     }
 }
